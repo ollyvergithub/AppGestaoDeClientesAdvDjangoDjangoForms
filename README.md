@@ -11,6 +11,8 @@ Versão: 1.0
 
 * Class Based Views;
 * Sistema de Templates;
+* CustomTemplateTags;
+* CustomFilters;
 * Customização do Admin;
 * Django ORM;
 * Utilizando o sistema de permissoes do Django;
