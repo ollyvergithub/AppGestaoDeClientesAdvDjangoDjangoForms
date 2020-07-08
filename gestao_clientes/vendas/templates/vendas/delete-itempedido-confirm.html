@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Confirmacao de deleção de item de pedido {% endblock %}
+
+{% block main %}
+
+    <h1>Tem certeza que deseja deletar o item de pedido {{ item_pedido }} </h1>
+
+    <form action="{% url 'delete-item-pedido' item_pedido.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+{% endblock %}
+

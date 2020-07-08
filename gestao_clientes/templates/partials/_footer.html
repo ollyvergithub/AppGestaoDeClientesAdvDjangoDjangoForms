@@ -1,0 +1,15 @@
+{% load static %}
+{% load filtros_personalizados %}
+{% load tags_personalizadas %}
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted pt-3">
+            Desenvolvimento web com Django 2.x<br>
+            {% current_time "%Y-%m-%d %I:%M %p" as the_time %}
+            Minha Tag Personalizada - The time is {{ the_time }}.<br>
+            Meu filtro Personalizado {{ 12585.585985|arredonda:2 }}<br>
+            Meu filtro Personalizado {{ "AQUI "|retorna_texto}}<br>
+            Minha Tag Personalizada - {% tag_recebendo_contexto "%Y-%m-%d %I:%M %p" %}.
+        </p>
+    </div>
+</footer>

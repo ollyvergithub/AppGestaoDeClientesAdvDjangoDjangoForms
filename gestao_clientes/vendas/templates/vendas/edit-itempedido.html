@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+    <h2>Editando item {{ item_pedido.produto.descricao }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form | bootstrap }}
+
+        <button class="btn btn-info" type="submit">Atualizar</button>
+    </form>
+{% endblock %}

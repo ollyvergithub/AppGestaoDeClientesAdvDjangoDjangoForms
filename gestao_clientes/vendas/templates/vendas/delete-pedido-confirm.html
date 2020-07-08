@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Confirmacao de deleção de pedido {% endblock %}
+
+{% block main %}
+
+    <h1>Tem certeza que deseja deletar Venda ID: {{ venda.id }} Valor: {{ venda.valor }}</h1>
+
+    <form action="{% url 'delete-pedido' venda.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+{% endblock %}
+

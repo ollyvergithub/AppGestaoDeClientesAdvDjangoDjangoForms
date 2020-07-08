@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Seja bem vindo {% endblock %}
+
+{% block main %}
+
+
+    <div class="row">
+
+        <div class="container">
+            <h1>Seja bem vindo {{user}}</h1>
+            <h2>HOME 4 Class Based Views - class MyView(View):</h2>
+            <h3>Podemos criar qualquer verbo HTTP com a class MyView(View):</h3>
+            <p>{{minha_variavel}}</p>
+        </div>
+
+        <div class="col-sm">
+            {% if user.is_authenticated %}
+                <p>Ola {{ user.username }}</p>
+                <a href="{% url 'logout' %}">Sair</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

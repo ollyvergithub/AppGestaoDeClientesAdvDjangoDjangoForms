@@ -1,0 +1,109 @@
+Log de exception: 2020-07-08 09:55:39 - ollyver
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\gestao_clientes\vendas\views.py", line 39, in get
+    1/0
+ZeroDivisionError: division by zero
+Log de error: 2020-07-08 09:55:39 - ollyver
+Log de exception: 2020-07-08 10:20:14 - ollyver
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\gestao_clientes\vendas\views.py", line 39, in get
+    1/0
+ZeroDivisionError: division by zero
+Log de error: 2020-07-08 10:20:14 - ollyver
+Internal Server Error: /clientes/person_list/
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\test\utils.py", line 98, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\test\utils.py", line 98, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\loader_tags.py", line 182, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\engine.py", line 130, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: partials/busca.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = response.render()
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: partials/busca.html
+"GET /clientes/person_list/ HTTP/1.1" 500 199219
+Internal Server Error: /clientes/person_list/
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\debug_toolbar\middleware.py", line 69, in __call__
+    content_encoding = response.get("Content-Encoding", "")
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\db\models\query.py", line 394, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\db\models\query.py", line 836, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\db\models\query.py", line 854, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\db\models\sql\query.py", line 1253, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\db\models\sql\query.py", line 1277, in _add_q
+    split_subq=split_subq,
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\db\models\sql\query.py", line 1150, in build_filter
+    arg, value = filter_expr
+ValueError: too many values to unpack (expected 2)
+"GET /clientes/person_list/ HTTP/1.1" 500 93545
+Internal Server Error: /clientes/person_list/
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\contrib\auth\mixins.py", line 52, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\venv\lib\site-packages\django\views\generic\list.py", line 142, in get
+    self.object_list = self.get_queryset()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /clientes/person_list/ HTTP/1.1" 500 96878
+Log de exception: 2020-07-08 11:08:36 - ollyver
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\cursos\__CursosPythonDjango\CursoUdemyDjangoAvancado\gestao_clientes\vendas\views.py", line 39, in get
+    1/0
+ZeroDivisionError: division by zero
+Log de error: 2020-07-08 11:08:36 - ollyver

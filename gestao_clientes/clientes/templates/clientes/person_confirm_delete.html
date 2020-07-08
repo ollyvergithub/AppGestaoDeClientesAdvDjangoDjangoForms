@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Administracao {% endblock %}
+
+{% block main %}
+
+    <div class="row">
+
+        <div class="col-8">
+            <h3>Exclusão do cliente</h3>
+            <h4>PersonDelete(DeleteView):</h4>
+            <h5>Por padrão o Django injeta um objeto chamado de object</h5>
+            <br>
+            <form method="post">{% csrf_token %}
+                <p>Confirma a exclusão de "{{ object }}"?</p>
+                <input type="submit" class="btn btn-danger mr-2" value="Confirmar">
+                <a class="btn btn-info" href="{% url 'person_list_cbv' %}">Cancelar</a>
+            </form>
+        </div>
+
+        <div class="col-4">
+            {% if user.is_authenticated %}
+                <p>Ola {{user.username }}
+                    <a href="{% url 'logout' %}">
+                        <span class="badge badge-dark">Sair</span>
+                    </a>
+                </p>
+
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

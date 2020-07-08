@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} 404 - Oooops! Não encontrado {% endblock %}
+
+{% block main %}
+<div class="row">
+
+        <div class="col-12">
+            <h3>404 - Oooops! Não encontrado</h3>
+            <h4>A página: {{ request_path }} que vc procura não foi encontrada</h4>
+            <h5>Gerou a seguinte excessão: {{ exception }}</h5>
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+      </div>
+    </footer>
+{% endblock %}

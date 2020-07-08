@@ -50,7 +50,12 @@ V.  Configure a instância com o .env
 $ cp .env_sample .env
 ```
 
-VI.  Execute os testes.
+VI.  Rode as migrações
+```console
+$ python manage.py migrate
+```
+
+VII.  Execute os testes.
 ```console
 $ python manage.py test
 ```

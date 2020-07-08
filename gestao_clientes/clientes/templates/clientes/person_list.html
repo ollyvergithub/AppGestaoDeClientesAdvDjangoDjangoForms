@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load filtros_personalizados %}
+{% load tags_personalizadas %}
+
+{% block title %} Administracao {% endblock %}
+
+    {% block busca %}
+        {% include 'partials/_busca.html' %}
+    {% endblock %}
+{% block main %}
+
+    <div class="row">
+        <div class="col-8">
+            <h2>{{ request.session.message }}</h2>
+            <h3>Listagem de clientes - class PersonList(ListView):</h3>
+            <h4>Por padrão o Django injeta um objeto chamado de object_list</h4>
+            <h5>Utilizando Template Filters - Existe(m) {{ object_list|length }} cliente(s) cadastrado(s)</h5>
+            <h6>Recebendo Session da View: {{ message }}</h6>
+
+            <ul class="list-group">
+                {% for person in object_list %}
+                    <li class="list-group-item">
+                        <p>Detalhe - PersonDetail: <a
+                                href="{% url 'person_deitail' person.id %}">{{ person.first_name }}</a></p>
+                        <p>Editar - PersonUpdate: <a
+                                href="{% url 'person_update' person.id %}">{{ person.first_name }}</a></p>
+                        <a href="{% url 'person_delete' person.id %}" class="trash-item"> <i class="fa fa-trash"
+                                                                                             aria-hidden="true"></i></a>
+                        <p>
+                            Template Filter force_escape|title:
+                            <strong>
+                                {% filter force_escape|title %}
+                                    {{ person.nome_completo }}
+                                {% endfilter %}
+                            </strong>
+                        </p>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item"><strong>Não existe nenhum cliente cadastrado.</strong></li>
+                {% endfor %}
+            </ul>
+
+            <br>
+
+            <a href="{% url 'person_create' %}" class="btn btn-primary"> Novo cliente</a>
+
+        </div>
+
+        <div class="col-4">
+            {% if user.is_authenticated %}
+                <p>Ola {{ user.username }}
+                    <a href="{% url 'logout' %}">
+                        <span class="badge badge-dark">Sair</span>
+                    </a>
+                </p>
+
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

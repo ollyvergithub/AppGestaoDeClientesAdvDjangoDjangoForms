@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Administracao {% endblock %}
+
+{% block main %}
+
+    <div class="row">
+
+        <div class="col-8">
+            <h3>Detalhe do cliente</h3>
+            <h4>class PersonDetail(DetailView):</h4>
+            <h5>Por padrão o Django injeta um objeto chamado de object</h5>
+            <p><strong>Contexto Injetado: {{now}}</strong></p>
+            <p>Nome: {{object.first_name}}</p>
+            <p>Sobrenome: {{object.last_name}}</p>
+            <p>Idade: {{object.age}}</p>
+            <br>
+            <a href="{% url 'person_create' %}" class="btn btn-primary mr-2"> Novo cliente</a>
+            <a href="{% url 'person_update' object.id %}" class="btn btn-info mr-2"> Editar cliente</a>
+            <a href="{% url 'person_delete' object.id %}" class="btn btn-danger"> Exluir cliente</a>
+        </div>
+
+        <div class="col-4">
+            {% if user.is_authenticated %}
+                <p>Ola {{user.username }}
+                    <a href="{% url 'logout' %}">
+                        <span class="badge badge-dark">Sair</span>
+                    </a>
+                </p>
+
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

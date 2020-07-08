@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block main %}
+    <h1>Dashboard</h1>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Quantidade de Pedidos: {{ n_ped }}</li>
+        <li class="list-group-item">Média das Vendas: {{ media }}</li>
+        <li class="list-group-item">Média dos Descontos: {{ media_desc }}</li>
+        <li class="list-group-item">Pedido Menor Valor: {{ min }}</li>
+        <li class="list-group-item">Pedido Maior Valor: {{ max }}</li>
+        <li class="list-group-item">Quantidade de Pedidos com NFE Emitida: {{ n_ped_nfe }}</li>
+    </ul>
+
+{% endblock %}

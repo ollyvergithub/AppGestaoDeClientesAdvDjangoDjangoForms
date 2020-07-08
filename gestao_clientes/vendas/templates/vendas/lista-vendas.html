@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Listagem das vendas {% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-12">
+            <h1>Listagem das vendas</h1>
+            <p>Total utilizando pluralize: {{ count_vendas }} vend{{ count_vendas|pluralize:"a,as" }}</p>
+
+            {% if vendas %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Número</th>
+                        <th scope="col">Desconto</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Excluir</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for venda in vendas %}
+                        <tr>
+                            <td>{{ venda.id }}</td>
+                            <td>{{ venda.numero }}</td>
+                            <td>{{ venda.desconto }}</td>
+                            <td>{{ venda.valor }}</td>
+{#                            {% venda.get_status_display() as status_legivel    %}#}
+                            <td>{{ venda.get_status_display }}</td>
+                            <td>
+                                <a href="{% url 'edit-pedido' venda.id %}">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'delete-pedido' venda.id %}">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a  class="btn btn-primary" href="{% url 'novo-pedido' %}">Nova venda</a>
+            {% endif %}
+{#        # implementando get_raw_vendas que está em models#}
+        {%  for venda in raw_vendas %}
+            <p>Imiprimindo com get_raw_vendas: {{ venda }}</p>
+        {% endfor %}
+
+        </div>
+    </div>
+{% endblock main %}
+

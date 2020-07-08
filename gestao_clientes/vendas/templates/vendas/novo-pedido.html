@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Novo Pedido{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-12">
+            <h1>Novo pedido</h1>
+
+            <form method="post" action="{% url 'novo-pedido' %}">
+                {% csrf_token %}
+
+                <h2>Cabeçalho do pedido numero {{ venda.numero }}</h2>
+                <input type="text" name="numero" class="form-control" value="{{ numero }}">
+
+                <label for="desconto">Desconto</label><br>
+                <input type="text" name="desconto" id="desconto" value="{{ desconto }}" placeholder="Desconto" class="form-control">
+
+                <input type="hidden" value="{{ venda.id }}" name="venda_id">
+
+                <br>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <br>
+            <b>Total: </b> {{ venda.valor }}
+        </div>
+    </div>
+{% endblock main %}
+
+{% block extra %}
+    <p><strong>Venda: {{ venda }}</strong></p>
+    {% if venda %}
+        <div class="row">
+            <div class="col-12">
+
+                <form action="{% url 'novo-item-pedido' venda.id %}" method="post">
+                    {% csrf_token %}
+                    {{ form_item | bootstrap }}
+                    <button class="btn btn-info">Incluir</button>
+                </form>
+
+                <h2 class="mt-3">Listagem de itens</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Valor do Produto</th>
+                        <th scope="col">Desconto</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Excluir?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in itens %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.produto.descricao }}</td>
+                            <td>{{ item.quantidade }}</td>
+                            <td>{{ item.produto.preco }}</td>
+                            <td>{{ item.desconto }}</td>
+                            <td>
+                                <a href="{% url 'edit-item-pedido' item.id %}">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'delete-item-pedido' item.id %}">Excluir</a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+{% endblock extra %}
